@@ -3,7 +3,8 @@ import json
 pokedex = open("./pokedex.json", encoding="utf8")
 ## create variable "data" that represents the enitre pokedex list
 data = json.load(pokedex)
-
+moves = open("./moves.json", encoding= "utf8")
+move = json.load(moves)
 
 # Create a function that will take the data from the JSON file and you will iterate through the list of pokemon and print each pokemons name.
 
@@ -16,8 +17,8 @@ data = json.load(pokedex)
 
 #Based on user input, show all moves that a pokemon could learn based on their type. For example, if Charizard is fire/fyling, show all fire and flying moves. HINT import the moves.json file too!
 # print(data[0]['name'])
-def pokedex():
-    
+def language():
+
     language=input("english, chinese, french or japanese")
   
     if language==("english") or ("french") or ("japanese") or ("chinese"):
@@ -25,5 +26,12 @@ def pokedex():
            print (pokemon['name'][language])
     x=int(input("what pokemon do you want?"))
     print(data[x]['name'][language])
+    return x
+  
+language()
+
+def get_pokemon_moves():
     
-pokedex()
+    print(move[x])
+
+get_pokemon()

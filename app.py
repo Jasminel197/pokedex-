@@ -30,8 +30,7 @@ def language():
   
 language()
 
-def get_pokemon_moves():
-    
+def get_pokemon_moves(x):
     print(move[x])
 
-get_pokemon()
+get_pokemon_moves(language())

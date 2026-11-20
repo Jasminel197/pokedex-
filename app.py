@@ -26,21 +26,26 @@ def language():
            print (pokemon['name'][language])
 
     return language
-language()
 
 
-def get_pokemon():
+
+def get_pokemon(poke_language):
     x=int(input("what pokemon do you want?"))
      
-    print(data[x]['name'][language])
+    print(data[x]['name'][poke_language])
     return x
-get_pokemon()
+
+# language=language()
+
+get_pokemon(language)
     
   
 
 
-def get_pokemon_moves(x):
+def get_pokemon_moves(pokemon,language):
 
-    print(move[x])
+    print(move[language][pokemon])
 
-get_pokemon_moves()
+x=get_pokemon()
+
+get_pokemon_moves(x)

@@ -26,14 +26,21 @@ def language():
            print (pokemon['name'][language])
 
     return language
+language()
 
 
 
 def get_pokemon(poke_language):
-    x=int(input("what pokemon do you want?"))
-     
-    print(data[x]['name'][poke_language])
-    return x
+    search = input("What pokemon are you looking for? ")
+    found = False
+
+    for pokemon in data:
+        if search.lower() in pokemon['name'][language].lower():
+            print(pokemon['name'][language])
+            found = True
+
+    if found == False:
+        print("No pokemon found.")
 
 # language=language()
 poke_language=language()

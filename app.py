@@ -21,31 +21,28 @@ def language():
 
     language=input("english, chinese, french or japanese")
   
-    if language==("english") or ("french") or ("japanese") or ("chinese"):
+    if language == ["english","french","japanese","chinese"]:
          for pokemon in data:
            print (pokemon['name'][language])
 
     return language
 
+language()
 
-
-def get_pokemon(poke_language):
+def get_pokemon(lang):
+    
+    
     x=int(input("what pokemon do you want?"))
      
-    print(data[x]['name'][poke_language])
+    print(data[x]['name'][language])
+    lang=language()
     return x
-
-# language=language()
-
-get_pokemon(language)
-    
+get_pokemon()
   
 
 
-def get_pokemon_moves(pokemon,language):
-
-    print(move[language][pokemon])
-
-x=get_pokemon()
-
-get_pokemon_moves(x)
+def get_pokemon_moves():
+    x=get_pokemon()
+    language=language
+    print(move[language][x])
+get_pokemon_moves()

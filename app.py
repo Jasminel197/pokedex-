@@ -27,20 +27,48 @@ def language():
 
     return language
 
-language()
 
-def get_pokemon():
-    search=input("what pokemon do you want")
-    found=False 
+def get_pokemon(language):
+    list=[]
+    search = input("What pokemon are you looking for? ")
+    found = False
+
     for pokemon in data:
-        if search in pokemon["name"]:
-            print(pokemon["name"])
-            found = True
-    if found==False:
-        print("No pokemon found")
-get_pokemon()
+        if search.lower() in pokemon['name'][language][0].lower():
+            list.append(pokemon['name'][language])
+          
+            print(list)
+            return list
+    # if found == False:
+    #     print("No pokemon found.")
+
+# language=language()
+language=language()
+get_pokemon(language)
+
+    
   
 
+
+# def get_pokemon_moves(pokemon,language):
+
+#     print(move[language][pokemon])
+    
+#     language = language()
+#     pokemon=get_pokemon(language)
+
+# get_pokemon_moves(pokemon,language)
+
+# def get_pokemon():
+#     search=input("what pokemon do you want")
+#     found=False 
+#     for pokemon in data:
+#         if search in pokemon["name"]:
+#             print(pokemon["name"])
+#             found = True
+#     if found==False:
+#         print("No pokemon found")
+# get_pokemon()
 
 # def get_pokemon_moves():
 #     x=get_pokemon()
